@@ -3,8 +3,8 @@
 /* Pastikan submit pada button memiliki name yaitu submit */ 
 
 if(isset($_POST["submit"])){
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+  $username = htmlspecialchars($_POST["username"]);
+  $password = htmlspecialchars($_POST["password"]);
   password_verify($password, PASSWORD_DEFAULT);
 
   if($username == "" || $password == ""){
